@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
     redirect_to user_signed_in? ? root_url : new_user_session_path, alert: exception.message
   end
 
+  before_filter { redirect_to 'http://vps216668.ovh.net/' }
+
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :check_group_existence
 
